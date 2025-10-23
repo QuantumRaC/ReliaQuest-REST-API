@@ -5,6 +5,11 @@ import java.util.UUID;
 
 import com.challenge.api.model.Employee;
 
+/**
+ * Implements the interface Employee and provides implementations for functions
+ * So Employees can be created as EmployeeImplementation objects for testing.
+ */
+
 public class EmployeeImplementation implements Employee {
     private UUID uuid;
     private String firstName;

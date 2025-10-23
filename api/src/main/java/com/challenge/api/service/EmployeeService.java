@@ -7,8 +7,17 @@ import com.challenge.api.model.Employee;
 import com.challenge.api.model.EmployeeImplementation;
 import org.springframework.stereotype.Service;
 
+/**
+ * Service layer containing business logic for Employee operations;
+ * Also provides mock data handling for this challenge.
+ */
 @Service
 public class EmployeeService {
+    /**
+     * Simulates data storage of all Employees temporarily,
+     * Stocks mock Employee objects keyed by UUID for this challenge.
+     * In production can be replaced by a DB
+     */
     private final Map<UUID, Employee> employeeRepo = new HashMap<>();
 
     public EmployeeService() {

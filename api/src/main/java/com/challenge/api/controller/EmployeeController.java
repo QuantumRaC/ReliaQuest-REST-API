@@ -9,10 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * REST controller exposing endpoints for Employee management;
+ * Handles HTTP requests and delegates all business logic to EmployeeService.
+ */
 @RestController
 @RequestMapping("/api/v1/employee")
 public class EmployeeController {
-
+    /**
+     * Calls into employeeService, connecting to the service layer
+     * And providing logic for employee operations
+     */
     private final EmployeeService employeeService;
 
     // constructor injection
@@ -49,6 +56,7 @@ public class EmployeeController {
     @PostMapping
     public Employee createEmployee(@RequestBody Object requestBody) {
         Employee newEmployee = employeeService.createEmployee(requestBody);
+        // better practice - return with status code
         return ResponseEntity.status(HttpStatus.CREATED).body(newEmployee);
     }
 }
